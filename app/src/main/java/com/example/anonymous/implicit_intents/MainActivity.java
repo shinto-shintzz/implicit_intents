@@ -14,9 +14,9 @@ import android.widget.ListView;
 public class MainActivity extends ListActivity {
      String[] ACTIVITY_CHOICES = new String[] {
             "My Website",
-            "Start Voice Command"
+            "Voice Command"
     };
-    final String searchTerms = "superman";
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setListAdapter(new ArrayAdapter<String>(this,
@@ -29,11 +29,11 @@ public class MainActivity extends ListActivity {
             public void onItemClick(AdapterView<?> arg0, View arg1,
                                     int arg2, long arg3) {
                 switch(arg2) {
-                    case 0: //opens web browser and navigates to given website
+                    case 0:
                         startActivity(new Intent(Intent.ACTION_VIEW,
-                                Uri.parse("http://www.lineofcode.in.com/")));
+                                Uri.parse("http://www.lineofcode.in")));
                         break;
-                    case 1: //starts the voice command
+                    case 1:
                         startActivity(new
                                 Intent(Intent.ACTION_VOICE_COMMAND));
                         break;
